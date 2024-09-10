@@ -136,8 +136,8 @@ screen Window:
         idle "images/sprites/p1/Room1/Window.png"
         hover "images/sprites/p1/Room1/Window_hover.png"
         hover_sound "sfx/window.mp3"
-        activate_sound "sfx/thunder.mp3"
-        action Notify("Опять гроза в начале мая...")
+        activate_sound "sfx/move.mp3"
+        action Jump("TWindow")
     zorder 2
 
 screen cola:
@@ -199,6 +199,17 @@ screen Backpack:
 
     zorder 3
 
+screen ToRoom:
+    imagebutton:
+        ypos 1000
+        xpos 760       
+        idle "images/sprites/Back.png"
+        hover "images/sprites/Back_hover.png"
+        hover_sound "sfx/hover.mp3"
+        activate_sound "sfx/click.mp3"
+        action Jump("BTRoom")
+    zorder 3
+
 # Фоны
 
 screen room1st:
@@ -208,6 +219,14 @@ screen room1st:
     fixed:
         xsize 1920 ysize 1080
         add "images/bg/p1/bg room1.png" align (.5,.5)
+
+screen room_w:
+    modal True
+    zorder 1
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p1/bg window.png" align (.5,.5)
 
 screen RKitchen:
     modal True

@@ -20,6 +20,23 @@ show screen sofa
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 "  "
 
+label TWindow:
+hide screen Phone
+hide screen Backpack
+hide screen TKitchen
+hide screen Window
+hide screen sofa 
+hide screen room1st
+with dissolve
+show screen room_w
+with dissolve
+show screen Phone
+show screen Backpack
+show screen ToRoom
+$renpy.sound.play("audio/sfx/rain.mp3", loop=True)
+"  "
+$renpy.notify("Опять гроза в начале мая.")
+
 label ToRoom:
 hide screen TKitchen2
 hide screen P
@@ -33,6 +50,24 @@ with dissolve
 hide screen RKitchen
 with dissolve
 jump room1
+
+label BTRoom:
+hide screen room_w
+with dissolve
+hide screen Phone
+hide screen Backpack
+hide screen ToRoom
+show screen room1st
+with dissolve
+show screen Phone
+with dissolve
+show screen Backpack
+with dissolve
+show screen TKitchen
+show screen Window
+show screen sofa
+$renpy.sound.play("audio/sfx/rain.mp3", loop=True)
+"  "
 
 label kitchen:
     
