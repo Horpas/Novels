@@ -1,32 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/P1.rpy", line 35, in script
-    show screen ToRoom
+  File "game/P1.rpy", line 134, in script
+    show screen MW
   File "renpy/common/000statements.rpy", line 647, in execute_show_screen
     renpy.show_screen(name, *args, **kwargs)
-Exception: Screen ToRoom is not known.
+Exception: Screen MW is not known.
 
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/P1.rpy", line 35, in script
-    show screen ToRoom
-  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1974, in execute
+  File "game/P1.rpy", line 134, in script
+    show screen MW
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1974, in execute
     self.call("execute")
-  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1953, in call
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1953, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "D:\renpy-8.1.1-sdk\renpy\statements.py", line 374, in call
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\statements.py", line 374, in call
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 647, in execute_show_screen
     renpy.show_screen(name, *args, **kwargs)
-  File "D:\renpy-8.1.1-sdk\renpy\display\screen.py", line 1327, in show_screen
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\display\screen.py", line 1327, in show_screen
     raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen ToRoom is not known.
+Exception: Screen MW is not known.
 
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
 In My Head 1.0
-Wed Sep 11 09:04:49 2024
+Wed Sep 11 11:25:39 2024

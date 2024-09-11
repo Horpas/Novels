@@ -27,19 +27,18 @@ hide screen TKitchen
 hide screen Window
 hide screen sofa 
 hide screen room1st
-with dissolve
 show screen room_w
-with dissolve
 show screen Phone
 show screen Backpack
 show screen ToRoom
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
-"  "
 $renpy.notify("Опять гроза в начале мая.")
-
+"  "
 label ToRoom:
 hide screen TKitchen2
 hide screen P
+hide screen MW
+hide screen drawer
 hide screen TFridge
 hide screen Fridge
 hide screen TExit
@@ -53,16 +52,12 @@ jump room1
 
 label BTRoom:
 hide screen room_w
-with dissolve
 hide screen Phone
 hide screen Backpack
 hide screen ToRoom
 show screen room1st
-with dissolve
 show screen Phone
-with dissolve
 show screen Backpack
-with dissolve
 show screen TKitchen
 show screen Window
 show screen sofa
@@ -94,6 +89,8 @@ label kitchen:
     with dissolve
     show screen TKitchen2
     show screen P
+    show screen drawer
+    show screen MW
     show screen Fridge
     show screen TExit
     $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
@@ -118,15 +115,14 @@ label Bkitchen:
     hide screen cola
     hide screen KBack
     show screen RKitchen
-    with dissolve
     show screen Phone
-    with dissolve
     show screen Backpack
-    with dissolve
     show screen TKitchen2
     show screen P
     show screen Fridge
     show screen TExit
+    show screen drawer
+    show screen MW
     $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
     " "
 
@@ -134,6 +130,8 @@ label Fridge:
     hide screen crash
     hide screen error_message
     hide screen TKitchen2
+    hide screen drawer
+    hide screen MW
     hide screen P
     hide screen RKitchen
     hide screen Fridge
@@ -144,7 +142,6 @@ label Fridge:
     show screen Backpack
     show screen Phone
     show screen TFridge
-    with dissolve
     show screen cola
     show screen error_bottle
     show screen KBack
@@ -153,6 +150,8 @@ label Fridge:
 
 label Exit:
 hide screen TKitchen2
+hide screen drawer
+hide screen MW
 hide screen P
 hide screen TFridge
 hide screen Fridge
@@ -173,5 +172,38 @@ show screen DBexit
 show screen Boots
 show screen EBoot
 show screen DTKitchen
+$renpy.sound.play("audio/sfx/rain.mp3", loop=True)
+" "
+
+label BTK:
+hide screen TKitchen3
+hide screen Phone
+hide screen Backpack
+hide screen glass
+hide screen glass2
+hide screen tubus
+hide screen servicee
+hide screen Idrawer
+jump Bkitchen
+
+label TDrawer:
+hide screen TKitchen2
+hide screen MW
+hide screen P
+hide screen TFridge
+hide screen Fridge
+hide screen drawer
+hide screen TExit
+hide screen Phone
+hide screen Backpack
+hide screen RKitchen
+show screen Idrawer
+show screen Phone
+show screen Backpack
+show screen TKitchen3
+show screen glass
+show screen glass2
+show screen tubus
+show screen servicee
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 " "

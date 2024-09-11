@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Sprites.rpy", line 11: the action keyword argument was not given a value.
-    action:
-          ^
+File "game/P1.rpy", line 186: expected 'label_name' not found.
+    jump("Bkitchen")
+        ^
 
-Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Sep 10 21:27:48 2024
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Wed Sep 11 11:07:21 2024

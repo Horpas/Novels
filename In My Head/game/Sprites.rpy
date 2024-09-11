@@ -151,6 +151,71 @@ screen cola:
         action Notify("Кайф...")
     zorder 2
 
+screen drawer:
+    imagebutton:
+        xpos 1382
+        ypos 660        
+        idle "images/sprites/p1/Kitchen/drawer_door.png"
+        hover "images/sprites/p1/Kitchen/drawer_door_hover.png"
+        hover_sound "sfx/drawer_hover.mp3"
+        activate_sound "sfx/drawer.mp3"
+        action Jump("TDrawer")
+    zorder 2
+
+screen glass:
+    imagebutton:
+        xpos 1357
+        ypos 452        
+        idle "images/sprites/p1/Drawer/glass.png"
+        hover "images/sprites/p1/Drawer/glass_hover.png"
+        hover_sound "sfx/glass_hover.mp3"
+        activate_sound "sfx/glass.mp3"
+        action Notify("Этот стакан мне подарили в Китае. Или это миска?")
+    zorder 2
+
+screen glass2:
+    imagebutton:
+        xpos 1063
+        ypos 33       
+        idle "images/sprites/p1/Drawer/glass2.png"
+        hover "images/sprites/p1/Drawer/glass2_hover.png"
+        hover_sound "sfx/glass_hover.mp3"
+        activate_sound "sfx/glass.mp3"
+        action Notify("Горшочек больше не варит...")
+    zorder 2   
+
+screen tubus:
+    imagebutton:
+        xpos 1424
+        ypos 65      
+        idle "images/sprites/p1/Drawer/tubus.png"
+        hover "images/sprites/p1/Drawer/tubus_hover.png"
+        hover_sound "sfx/tubus_hover.mp3"
+        action Notify("Тубусы. Незаменимы в краже кофе у соседа.")
+    zorder 2
+
+screen MW:
+    imagebutton:
+        xpos 1616
+        ypos 357      
+        idle "images/sprites/p1/Kitchen/MW.png"
+        hover "images/sprites/p1/Kitchen/MW_hover.png"
+        hover_sound "sfx/MW.mp3"
+        activate_sound "sfx/egg.mp3"
+        action Notify("Опять забыл яйца вытащить...")
+    zorder 2
+
+screen servicee:
+    imagebutton:
+        xpos 238
+        ypos 917      
+        idle "images/sprites/p1/Drawer/service.png"
+        hover "images/sprites/p1/Drawer/service_hover.png"
+        hover_sound "sfx/spoons.mp3"
+        activate_sound "sfx/spoons.mp3"
+        action Notify("Зачем холостяку столько сервиса?")
+    zorder 2
+
 # Интерфейс
 
 screen KBack:
@@ -160,7 +225,7 @@ screen KBack:
         idle "images/sprites/Back.png"
         hover "images/sprites/Back_hover.png"
         hover_sound "sfx/hover.mp3"
-        activate_sound "sfx/click.mp3"
+        activate_sound "sfx/Fridge_closed.mp3"
         action Jump("Bkitchen")
     zorder 3
 
@@ -171,7 +236,7 @@ screen TExit:
         idle "images/sprites/Back.png"
         hover "images/sprites/Back_hover.png"
         hover_sound "sfx/hover.mp3"
-        activate_sound "sfx/click.mp3"
+        activate_sound "sfx/move.mp3"
         action Jump("Exit")
     zorder 3
 
@@ -208,6 +273,17 @@ screen ToRoom:
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/click.mp3"
         action Jump("BTRoom")
+    zorder 3
+
+screen TKitchen3:
+    imagebutton:
+        ypos 1000
+        xpos 760       
+        idle "images/sprites/Back.png"
+        hover "images/sprites/Back_hover.png"
+        hover_sound "sfx/hover.mp3"
+        activate_sound "sfx/drawer_close.mp3"
+        action Jump("BTK")
     zorder 3
 
 # Фоны
@@ -259,3 +335,11 @@ screen Bexit:
     fixed:
         xsize 1920 ysize 1080
         add "images/bg/p1/bg exit.png" align (.5,.5)
+
+screen Idrawer:
+    modal True
+    zorder 1
+    
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p1/bg drawer.png" align (.5,.5)
