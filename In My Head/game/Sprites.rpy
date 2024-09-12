@@ -168,9 +168,9 @@ screen glass:
         ypos 452        
         idle "images/sprites/p1/Drawer/glass.png"
         hover "images/sprites/p1/Drawer/glass_hover.png"
-        hover_sound "sfx/glass_hover.mp3"
-        activate_sound "sfx/glass.mp3"
-        action Notify("Этот стакан мне подарили в Китае. Или это миска?")
+        hover_sound "sfx/cape_hover.mp3"
+        activate_sound "sfx/cape_click.mp3"
+        action Notify("Это крышка от термоса, который я благополучно потерял.")
     zorder 2
 
 screen glass2:
@@ -207,14 +207,48 @@ screen MW:
 
 screen servicee:
     imagebutton:
-        xpos 238
-        ypos 917      
+        xpos 240
+        ypos 530      
         idle "images/sprites/p1/Drawer/service.png"
         hover "images/sprites/p1/Drawer/service_hover.png"
         hover_sound "sfx/spoons.mp3"
         activate_sound "sfx/spoons.mp3"
         action Notify("Зачем холостяку столько сервиса?")
     zorder 2
+
+screen error_message2:
+    imagebutton:
+        xalign 0.5
+        yalign 0.5
+        idle "images/sprites/p1/Drawer/error_message.png"
+        activate_sound "sfx/click.mp3"
+        action Jump("TDrawer")
+
+    zorder 2
+
+screen spoon:
+    imagebutton:
+        xpos 746
+        ypos 750
+        idle "images/sprites/p1/Drawer/spoon.png"
+        hover "images/sprites/p1/Drawer/spoon_hover.png"
+        hover_sound "sfx/spoons.mp3"
+        activate_sound "sfx/spoons.mp3"
+        action Notify("Сейчас она мне ни к чему.")
+
+    zorder 2
+
+screen error_plate:
+    imagebutton:
+        xpos 226
+        ypos 413
+        idle "images/sprites/p1/Drawer/plate.png"
+        hover "images/sprites/p1/Drawer/plate_hover.png"
+        hover_sound "sfx/error_hover.mp3"
+        activate_sound "sfx/error_hover.mp3"
+        action Jump("error2")
+
+    zorder 3
 
 # Интерфейс
 
@@ -227,7 +261,7 @@ screen KBack:
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/Fridge_closed.mp3"
         action Jump("Bkitchen")
-    zorder 3
+    zorder 15
 
 screen TExit:
     imagebutton:
@@ -238,7 +272,7 @@ screen TExit:
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/move.mp3"
         action Jump("Exit")
-    zorder 3
+    zorder 15
 
 screen Phone:
     imagebutton:
@@ -250,7 +284,7 @@ screen Phone:
         activate_sound "sfx/phone_hover.mp3"
         action MainMenu()
 
-    zorder 3
+    zorder 15
 
 screen Backpack:
     imagebutton:
@@ -262,7 +296,7 @@ screen Backpack:
         activate_sound "sfx/Backpack.mp3"
         action Notify("Пусто...")
 
-    zorder 3
+    zorder 15
 
 screen ToRoom:
     imagebutton:
@@ -273,7 +307,7 @@ screen ToRoom:
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/click.mp3"
         action Jump("BTRoom")
-    zorder 3
+    zorder 15
 
 screen TKitchen3:
     imagebutton:
@@ -284,7 +318,7 @@ screen TKitchen3:
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/drawer_close.mp3"
         action Jump("BTK")
-    zorder 3
+    zorder 15
 
 # Фоны
 
@@ -327,6 +361,15 @@ screen crash:
     fixed:
         xsize 1920 ysize 1080
         add "images/sprites/p1/Fridge/Crash.png" align (.5,.5)
+
+screen crash2:
+    modal True
+    zorder 1
+    
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/sprites/p1/Drawer/crash2.png" align (.5,.5)
+
 
 screen Bexit:
     modal True

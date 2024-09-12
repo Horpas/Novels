@@ -64,8 +64,7 @@ show screen sofa
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 "  "
 
-label kitchen:
-    
+label kitchen:   
     hide screen DBexit
     hide screen Boots
     hide screen EBoot
@@ -104,6 +103,22 @@ label error:
     hide screen Backpack
     show screen crash
     show screen error_message
+    play sound "audio/sfx/error.mp3"
+    $renpy.notify("Когда-нибудь я выучу Python и уберу тебя отсюда.")
+
+label error2:
+    hide screen Idrawer
+    hide screen spoon
+    hide screen Phone
+    hide screen Backpack
+    hide screen TKitchen3
+    hide screen glass
+    hide screen glass2
+    hide screen tubus
+    hide screen error_plate
+    hide screen servicee
+    show screen error_message2
+    show screen crash2
     play sound "audio/sfx/error.mp3"
     $renpy.notify("Когда-нибудь я выучу Python и уберу тебя отсюда.")
     ""
@@ -183,11 +198,15 @@ hide screen glass
 hide screen glass2
 hide screen tubus
 hide screen servicee
+hide screen spoon
+hide screen error_plate
 hide screen Idrawer
 jump Bkitchen
 
 label TDrawer:
 hide screen TKitchen2
+hide screen error_message2
+hide screen crash2
 hide screen MW
 hide screen P
 hide screen TFridge
@@ -198,12 +217,14 @@ hide screen Phone
 hide screen Backpack
 hide screen RKitchen
 show screen Idrawer
+show screen spoon
 show screen Phone
 show screen Backpack
 show screen TKitchen3
 show screen glass
 show screen glass2
 show screen tubus
+show screen error_plate
 show screen servicee
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 " "

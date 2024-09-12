@@ -1,32 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/P1.rpy", line 134, in script
-    show screen MW
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-Exception: Screen MW is not known.
-
+  File "game/P1.rpy", line 224, in script
+    " "
+ScriptError: could not find label 'crash_2'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/P1.rpy", line 134, in script
-    show screen MW
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1974, in execute
-    self.call("execute")
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\display\screen.py", line 1327, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen MW is not known.
-
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/P1.rpy", line 224, in script
+    " "
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'crash_2'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
-In My Head 1.0
-Wed Sep 11 11:25:39 2024
+In My Head 1.0,patch_a.2
+Thu Sep 12 13:04:25 2024
