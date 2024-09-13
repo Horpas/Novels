@@ -249,14 +249,6 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Назад") action Rollback()
-            textbutton _("История") action ShowMenu('history')
-            textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Авто") action Preference("auto-forward", "toggle")
-            textbutton _("Сохранить") action ShowMenu('save')
-            textbutton _("Б.Сохр") action QuickSave()
-            textbutton _("Б.Загр") action QuickLoad()
-            textbutton _("Опции") action ShowMenu('preferences')
 
 
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое
@@ -316,10 +308,6 @@ screen navigation():
         elif not main_menu:
 
             textbutton _("Главное меню") action MainMenu()
-
-        textbutton _("Об игре") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Помощь не необходима и не относится к мобильным устройствам.
             textbutton _("Помощь") action ShowMenu("help")
@@ -1001,7 +989,7 @@ screen help():
 screen keyboard_help():
 
     hbox:
-        label _("Войти")
+        label _("Enter")
         text _("Прохождение диалогов, активация интерфейса.")
 
     hbox:
@@ -1025,11 +1013,11 @@ screen keyboard_help():
         text _("Включает режим пропуска.")
 
     hbox:
-        label _("Страница вверху")
+        label _("Page Up")
         text _("Откат назад по сюжету игры.")
 
     hbox:
-        label _("Страница вниз")
+        label _("Page Down")
         text _("Откатывает предыдущее действие вперёд.")
 
     hbox:

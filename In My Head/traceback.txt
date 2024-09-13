@@ -1,9 +1,9 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/P1.rpy", line 224, in script
-    " "
-ScriptError: could not find label 'crash_2'.
+  File "game/P1.rpy", line 160, in script
+    ""
+ScriptError: could not find label 'errorK'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,13 +16,13 @@ Full traceback:
     renpy.execution.run_context(True)
   File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\execution.py", line 958, in run_context
     context.run()
-  File "game/P1.rpy", line 224, in script
-    " "
+  File "game/P1.rpy", line 160, in script
+    ""
   File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'crash_2'.
+ScriptError: could not find label 'errorK'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
-In My Head 1.0,patch_a.2
-Thu Sep 12 13:04:25 2024
+In My Head 1.0,patch_a.3
+Fri Sep 13 11:09:11 2024

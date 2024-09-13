@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/P1.rpy", line 186: expected 'label_name' not found.
-    jump("Bkitchen")
-        ^
+File "game/P1.rpy", line 198: expected 'name' not found.
+    hide screen 
+                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Sep 11 11:07:21 2024
+Fri Sep 13 10:55:38 2024

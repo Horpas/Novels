@@ -125,7 +125,7 @@ screen error_bottle:
         hover "images/sprites/p1/Fridge/Orange_juice_hover.png"
         hover_sound "sfx/error_hover.mp3"
         activate_sound "sfx/error_hover.mp3"
-        action Jump("error")
+        action Jump("errorK")
 
     zorder 2
 

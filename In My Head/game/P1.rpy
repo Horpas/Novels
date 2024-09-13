@@ -94,7 +94,7 @@ label kitchen:
     show screen TExit
     $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
     " "
-label error:
+label errorK:
     hide screen error_message
     hide screen error_bottle
     hide screen cola
@@ -105,6 +105,7 @@ label error:
     show screen error_message
     play sound "audio/sfx/error.mp3"
     $renpy.notify("Когда-нибудь я выучу Python и уберу тебя отсюда.")
+    ""
 
 label error2:
     hide screen Idrawer
@@ -117,6 +118,9 @@ label error2:
     hide screen tubus
     hide screen error_plate
     hide screen servicee
+    hide screen TKitchen2
+    hide screen error_message2
+    hide screen crash2
     show screen error_message2
     show screen crash2
     play sound "audio/sfx/error.mp3"
@@ -194,6 +198,7 @@ label BTK:
 hide screen TKitchen3
 hide screen Phone
 hide screen Backpack
+hide screen crash2
 hide screen glass
 hide screen glass2
 hide screen tubus
@@ -204,6 +209,16 @@ hide screen Idrawer
 jump Bkitchen
 
 label TDrawer:
+hide screen Idrawer
+hide screen spoon
+hide screen Phone
+hide screen Backpack
+hide screen TKitchen3
+hide screen glass
+hide screen glass2
+hide screen tubus
+hide screen error_plate
+hide screen servicee
 hide screen TKitchen2
 hide screen error_message2
 hide screen crash2
