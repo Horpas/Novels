@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/P1.rpy", line 198: expected 'name' not found.
-    hide screen 
-                ^
+File "game/P1.rpy", line 281: expected 'label_name' not found.
+    jump("podyezd")
+        ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Sep 13 10:55:38 2024
+Fri Sep 13 16:24:16 2024

@@ -1,5 +1,7 @@
 #Скрипты или Лейблы
 
+define flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
+
 label start:
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 pause 5
@@ -243,3 +245,52 @@ show screen error_plate
 show screen servicee
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 " "
+
+label podyezd:
+hide screen DBexit
+hide screen Boots
+hide screen EBoot
+hide screen DTKitchen
+hide screen Bexit
+with dissolve
+hide screen Phone
+with dissolve
+hide screen Backpack
+with dissolve
+show screen Podyezd
+with dissolve
+show screen Backpack
+with dissolve
+show screen Phone
+with dissolve
+show screen Tyard
+show screen winda
+show screen Thome
+show screen rozetka
+show screen heater
+$renpy.sound.play("audio/sfx/rain.mp3", loop=True)
+" "
+
+label ban:
+$renpy.notify("Ай! Да кто делает розетки в подъезде?!")
+play sound("audio/sfx/rozetka.mp3")
+show WWhite
+with flashbulb
+pause 2
+hide WWhite
+with dissolve
+jump podyezd
+
+label TExit2:
+hide screen Tyard
+hide screen winda
+hide screen Thome
+hide screen rozetka
+hide screen heater
+hide screen Podyezd
+with dissolve
+hide screen Backpack
+with dissolve
+hide screen Phone
+with dissolve
+jump Exit

@@ -43,7 +43,8 @@ screen DBexit:
         idle "images/sprites/p1/Exit/Bexit.png"
         hover "images/sprites/p1/Exit/Bexit_hover.png"
         hover_sound "sfx/Exit.mp3"
-        action Notify("Оставлять квартиру открытой - так себе идея.")
+        activate_sound "sfx/move.mp3"
+        action Jump("podyezd")
 
     zorder 2
 
@@ -65,7 +66,7 @@ screen EBoot:
         ypos 844
         idle "images/sprites/p1/Exit/EBoot.png"
         hover "images/sprites/p1/Exit/EBoot_hover.png"
-        hover_sound "sfx/Eboot.mp3"
+        hover_sound "sfx/boots.mp3"
         activate_sound "sfx/Eboot.mp3"
         action Notify("О, нашёлся!")
 
@@ -91,7 +92,7 @@ screen P:
         hover "images/sprites/p1/Kitchen/p_hover.png"
         hover_sound "sfx/P.mp3"
         activate_sound "sfx/P_move.mp3"
-        action Notify("Просто портрет моей мамы.")
+        action Notify("Просто портрет.")
 
     zorder 2
 
@@ -250,6 +251,54 @@ screen error_plate:
 
     zorder 3
 
+screen Thome:
+    imagebutton:
+        xpos 1636
+        ypos 61
+        idle "images/sprites/p1/podyezd/Thome.png"
+        hover "images/sprites/p1/podyezd/Thome_hover.png"
+        hover_sound "sfx/Thome.mp3"
+        activate_sound "sfx/move.mp3"
+        action Jump("TExit2")
+
+    zorder 2
+
+screen winda:
+    imagebutton:
+        xpos 27
+        ypos 43
+        idle "images/sprites/p1/podyezd/winda.png"
+        hover "images/sprites/p1/podyezd/winda_hover.png"
+        hover_sound "sfx/window.mp3"
+        activate_sound "sfx/thunder.mp3"
+        action Notify("Рано ещё прыгать. Еще 2 курса впереди.")
+
+    zorder 2
+
+screen rozetka:
+    imagebutton:
+        xpos 397
+        ypos 731
+        idle "images/sprites/p1/podyezd/rozetka.png"
+        hover "images/sprites/p1/podyezd/rozetka_hover.png"
+        hover_sound "sfx/error_hover.mp3"
+        activate_sound "sfx/error_hover.mp3"
+        action Jump("ban")
+
+    zorder 2
+
+screen heater:
+    imagebutton:
+        xpos 44
+        ypos 723
+        idle "images/sprites/p1/podyezd/heater.png"
+        hover "images/sprites/p1/podyezd/heater_hover.png"
+        hover_sound "sfx/Heater_hover.mp3"
+        activate_sound "sfx/Heater.mp3"
+        action Notify("Книга жалоб и предложений в период отопительного сезона.")
+
+    zorder 2
+
 # Интерфейс
 
 screen KBack:
@@ -320,6 +369,16 @@ screen TKitchen3:
         action Jump("BTK")
     zorder 15
 
+screen Tyard:
+    imagebutton:
+        ypos 1000
+        xpos 760       
+        idle "images/sprites/Back.png"
+        hover "images/sprites/Back_hover.png"
+        hover_sound "sfx/hover.mp3"
+        action Notify("Может, ты не будешь диктовать, куда мне идти?")
+    zorder 15
+
 # Фоны
 
 screen room1st:
@@ -386,3 +445,19 @@ screen Idrawer:
     fixed:
         xsize 1920 ysize 1080
         add "images/bg/p1/bg drawer.png" align (.5,.5)
+
+screen Podyezd:
+    modal True
+    zorder 1
+    
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p1/bg podyezd.png" align (.5,.5)
+
+screen WWhite:
+    modal True
+    zorder 10
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/sprites/p1/podyezd/WWhite.png" align (.5,.5)

@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/P1.rpy", line 160, in script
-    ""
-ScriptError: could not find label 'errorK'.
+  File "game/P1.rpy", line 270, in script
+    show screen heater
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+Exception: Screen heater is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "game/P1.rpy", line 160, in script
-    ""
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'errorK'.
+  File "game/P1.rpy", line 270, in script
+    show screen heater
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1974, in execute
+    self.call("execute")
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1953, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\display\screen.py", line 1327, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen heater is not known.
+
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
-In My Head 1.0,patch_a.3
-Fri Sep 13 11:09:11 2024
+In My Head 1.0,patch_a.4
+Fri Sep 13 16:34:26 2024
