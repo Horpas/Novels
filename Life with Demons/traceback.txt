@@ -1,0 +1,157 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "D:\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 4122, in interact_core
+    renpy.loader.check_autoreload()
+  File "D:\renpy-8.1.1-sdk\renpy\loader.py", line 1168, in check_autoreload
+    renpy.exports.reload_script()
+  File "D:\renpy-8.1.1-sdk\renpy\exports.py", line 1951, in reload_script
+    renpy.game.call_in_new_context("_save_reload_game")
+  File "D:\renpy-8.1.1-sdk\renpy\game.py", line 353, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "D:\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "D:\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 4122, in interact_core
+    renpy.loader.check_autoreload()
+  File "D:\renpy-8.1.1-sdk\renpy\loader.py", line 1168, in check_autoreload
+    renpy.exports.reload_script()
+  File "D:\renpy-8.1.1-sdk\renpy\exports.py", line 1951, in reload_script
+    renpy.game.call_in_new_context("_save_reload_game")
+  File "D:\renpy-8.1.1-sdk\renpy\game.py", line 353, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "D:\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "D:\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 4122, in interact_core
+    renpy.loader.check_autoreload()
+  File "D:\renpy-8.1.1-sdk\renpy\loader.py", line 1168, in check_autoreload
+    renpy.exports.reload_script()
+  File "D:\renpy-8.1.1-sdk\renpy\exports.py", line 1951, in reload_script
+    renpy.game.call_in_new_context("_save_reload_game")
+  File "D:\renpy-8.1.1-sdk\renpy\game.py", line 353, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "D:\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "D:\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 507, in _execute_python_hide
+    ui.interact(suppress_overlay=True, suppress_underlay=True)
+  File "D:\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "D:\renpy-8.1.1-sdk\renpy\display\layout.py", line 818, in render
+    width = max(width, scale(minx, width))
+  File "D:\renpy-8.1.1-sdk\renpy\display\layout.py", line 40, in scale
+    if type(num) is float:
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.1.1.23060707
+Life With Demons 0.1
+Tue Sep 10 12:20:47 2024

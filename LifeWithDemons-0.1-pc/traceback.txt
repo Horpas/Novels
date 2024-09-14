@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 347, in script
+    show image "images/Tutorial.png" with fadeout
+  File "game/script.rpy", line 347, in <module>
+    show image "images/Tutorial.png" with fadeout
+NameError: name 'fadeout' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 347, in script
+    show image "images/Tutorial.png" with fadeout
+  File "C:\renpy-8.1.1-sdk\renpy\ast.py", line 1671, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "C:\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 347, in <module>
+    show image "images/Tutorial.png" with fadeout
+NameError: name 'fadeout' is not defined
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.1.1.23060707
+Life With Demons 0.1
+Thu Sep  7 16:13:46 2023
