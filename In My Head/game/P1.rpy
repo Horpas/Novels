@@ -247,6 +247,7 @@ $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 " "
 
 label podyezd:
+hide screen WWhite
 hide screen DBexit
 hide screen Boots
 hide screen EBoot
@@ -263,6 +264,9 @@ show screen Backpack
 with dissolve
 show screen Phone
 with dissolve
+jump podezd
+
+label podezd:
 show screen Tyard
 show screen winda
 show screen Thome
@@ -274,15 +278,15 @@ $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 label ban:
 $renpy.notify("Ай! Да кто делает розетки в подъезде?!")
 play sound("audio/sfx/rozetka.mp3")
-show WWhite
+show screen WWhite
 with flashbulb
-pause 2
-hide WWhite
+hide screen WWhite
 with dissolve
-jump podyezd
+jump podezd
 
 label TExit2:
 hide screen Tyard
+hide screen WWhite
 hide screen winda
 hide screen Thome
 hide screen rozetka
