@@ -218,9 +218,8 @@ style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
+    xalign 0.99
+    yalign 0.9
 
     spacing gui.choice_spacing
 
@@ -282,13 +281,14 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        xalign 0.06
         yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
+            xalign 0.5
+            yalign 0.5
             textbutton _("Начать") action Start()
 
         else:
@@ -355,13 +355,34 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
+
+            image "gui/window_icon.png":
+               xalign 0.4
+               yalign 0.1
+            xalign 0.52
+            yalign 0.08
             style "main_menu_vbox"
 
             text "[config.name!t]":
                 style "main_menu_title"
-
-            text "[config.version]":
+        
+            text "ALPHA-VERSION":
                 style "main_menu_version"
+                size 24
+                xalign 0.498
+                yalign 0.98
+
+        text "[config.version]":
+            style "main_menu_version"
+            size 15
+            xalign 0.498
+            yalign 0.95
+        
+        text "Horpas Games, 2024 Все права защищены.":
+            style "main_menu_version"
+            size 15
+            xalign 0.498
+            yalign 0.98
 
 
 style main_menu_frame is empty

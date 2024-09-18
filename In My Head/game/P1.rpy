@@ -2,11 +2,16 @@
 
 define flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
 
+define bottle = False
+define Gopstop_B = True
+
 label start:
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 pause 5
 play sound "audio/sfx/bed.mp3"
 pause 3
+show screen BS
+with dissolve
 jump room1
 
 label room1:
@@ -19,10 +24,14 @@ with dissolve
 show screen TKitchen
 show screen Window
 show screen sofa
+hide screen BS
+with dissolve
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 "  "
 
 label TWindow:
+show screen BS
+with dissolve
 hide screen Phone
 hide screen Backpack
 hide screen TKitchen
@@ -33,10 +42,14 @@ show screen room_w
 show screen Phone
 show screen Backpack
 show screen ToRoom
+hide screen BS
+with dissolve
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 $renpy.notify("Опять гроза в начале мая.")
 "  "
 label ToRoom:
+show screen BS
+with dissolve
 hide screen TKitchen2
 hide screen P
 hide screen MW
@@ -50,9 +63,13 @@ hide screen Phone
 with dissolve
 hide screen RKitchen
 with dissolve
+hide screen BS
+with dissolve
 jump room1
 
 label BTRoom:
+show screen BS
+with dissolve
 hide screen room_w
 hide screen Phone
 hide screen Backpack
@@ -63,8 +80,17 @@ show screen Backpack
 show screen TKitchen
 show screen Window
 show screen sofa
+hide screen BS
+with dissolve
 $renpy.sound.play("audio/sfx/rain.mp3", loop=True)
 "  "
+label BotI:
+$renpy.notify("Пригодится.")
+$renpy.sound.play("audio/sfx/Backpack.mp3")
+hide screen Bottle
+with dissolve
+$bottle = True
+jump Fridge
 
 label kitchen:   
     hide screen DBexit
@@ -133,6 +159,7 @@ label Bkitchen:
     hide screen TFridge
     hide screen error_message
     hide screen error_bottle
+    hide screen Bottle
     hide screen cola
     hide screen KBack
     show screen RKitchen
@@ -164,12 +191,17 @@ label Fridge:
     show screen Phone
     show screen TFridge
     show screen cola
+    if bottle == False:
+        show screen Bottle
+    else:
+        hide screen Bottle
     show screen error_bottle
     show screen KBack
     $renpy.sound.play("audio/sfx/Fridge.mp3", loop=True)
     ""
 
 label Exit:
+hide screen Bottle
 hide screen TKitchen2
 hide screen drawer
 hide screen MW
@@ -298,3 +330,92 @@ with dissolve
 hide screen Phone
 with dissolve
 jump Exit
+
+label street:
+hide screen Tyard
+hide screen WWhite
+hide screen winda
+hide screen Thome
+hide screen rozetka
+hide screen heater
+hide screen Podyezd
+with dissolve
+hide screen Backpack
+with dissolve
+hide screen Phone
+with dissolve
+play music "audio/ost/p1/na_zare.mp3" fadeout 1.0
+jump Strt2
+
+label Strt2:
+show screen street
+with dissolve
+show screen gostop
+show screen car
+show screen win
+show screen rainn
+show screen Backpack
+with dissolve
+show screen Phone
+with dissolve
+""
+
+label gopstop:
+if Gopstop_B == True:
+    hide screen BS
+    hide screen gostop
+    with dissolve
+    hide screen rainn
+    hide screen car
+    hide screen win
+    hide screen street
+    show bg street
+    play sound "sfx/gopstop_talking.mp3"
+    show v with dissolve
+    jump G_battle
+    label G_battle:  
+    menu:
+        V "Опять ты?"
+
+        "Чего тебе?":
+            play sound "sfx/gopstop_talking.mp3"
+            V "RНе строй из себя дебила."
+            V "Чё по мелочи сегодня?"
+
+        "Отвали.":
+            play sound "sfx/gopstop_talking.mp3"
+            V "В бубен захотел, умник?"
+            V "Чё по мелочи сегодня?"
+
+        "Ты машину притаранил у выезда?":
+            play sound "sfx/gopstop_talking.mp3"
+            V "Ха!{w} Делать мне нечего!"
+            V "Чё по мелочи сегодня?"
+else:
+    $renpy.notify("Лучше не трогать его.")
+
+label G_battle2:
+menu:
+    V "Алё? Я тебя спрашиваю!"
+
+    "Сегодня пусто":
+        $renpy.notify("А потом прыгать...")
+        jump G_battle2
+
+    "Выпить хочешь?":
+        if bottle == False:
+            $renpy.notify("А что ему предложить?")
+            jump G_battle2
+        else:
+            $bottle = False
+            $renpy.sound.play("audio/sfx/cola.mp3")
+            V "Уговорил...кыш отсюда."
+            hide v with dissolve
+            $Gopstop_B = False 
+            jump Strt2
+
+    "Слушай, угомонись.":
+        play sound "sfx/gopstop_talking.mp3"
+        V "Ты как разговариваешь с грозой улиц?"
+        V "Харе уплывать от вопроса."
+        jump G_battle2  

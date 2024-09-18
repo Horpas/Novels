@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/P1.rpy", line 267: expected 'label_name' not found.
-    jump "podezd"
-        ^
+File "game/screens.rpy", line 371: 'text_size' is not a keyword argument or valid child of the text statement.
+    text_size 15
+             ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Sep 14 13:00:45 2024
+Wed Sep 18 16:01:06 2024

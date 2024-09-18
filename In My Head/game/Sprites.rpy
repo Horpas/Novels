@@ -152,6 +152,17 @@ screen cola:
         action Notify("Кайф...")
     zorder 2
 
+screen Bottle:
+    imagebutton:
+        xpos 982
+        ypos 355      
+        idle "images/sprites/p1/Fridge/I_Juice.png"
+        hover "images/sprites/p1/Fridge/I_Juice_hover.png"
+        hover_sound "sfx/bottle_hover.mp3"
+        activate_sound "sfx/click.mp3"
+        action Jump("BotI")
+    zorder 2
+
 screen drawer:
     imagebutton:
         xpos 1382
@@ -299,6 +310,51 @@ screen heater:
 
     zorder 2
 
+screen gostop:
+    imagebutton:
+        xpos 23
+        ypos 394
+        idle "images/NPC/p1/Vanya.png"
+        hover "images/NPC/p1/Vanya_hover.png"
+        hover_sound "sfx/gopstop.mp3"
+        activate_sound "sfx/gopstop_talking.mp3"
+        action Jump("gopstop")
+
+    zorder 2
+
+screen rainn:
+    imagebutton:
+        xalign 0.5
+        yalign 0.5
+        idle "images/sprites/p1/rain.png"
+
+    zorder 2
+
+screen car:
+    imagebutton:
+        xpos 1380
+        ypos 528
+        idle  "images/sprites/p1/street/volga.png"
+        hover "images/sprites/p1/street/volga_hover.png"
+        hover_sound "sfx/car.mp3"
+        activate_sound "sfx/car_no_keys.mp3"
+        action Notify("Без ключей я никуда не поеду.")
+
+    zorder 2
+
+screen win:
+    imagebutton:
+        xpos 1280
+        ypos 64
+        idle  "images/sprites/p1/street/win.png"
+        hover "images/sprites/p1/street/win_hover.png"
+        hover_sound "sfx/window.mp3"
+        activate_sound "sfx/window_bran.mp3"
+        action Notify("Что-то у соседей опять не так.")
+
+    zorder 2
+
+
 # Интерфейс
 
 screen KBack:
@@ -343,7 +399,7 @@ screen Backpack:
         hover "images/sprites/Backpack_hover.png"
         hover_sound "sfx/Backpack_hover.mp3"
         activate_sound "sfx/Backpack.mp3"
-        action Notify("Пусто...")
+        action Jump("OpenInventory")
 
     zorder 15
 
@@ -369,6 +425,17 @@ screen TKitchen3:
         action Jump("BTK")
     zorder 15
 
+screen Closee:
+    imagebutton:
+        ypos 188
+        xpos 1200       
+        idle "images/sprites/close.png"
+        hover "images/sprites/close_hover.png"
+        hover_sound "sfx/hover.mp3"
+        activate_sound "sfx/Backpack.mp3"
+        action Jump("CloseInventory")
+    zorder 15    
+
 screen Tyard:
     imagebutton:
         ypos 1000
@@ -376,7 +443,7 @@ screen Tyard:
         idle "images/sprites/Back.png"
         hover "images/sprites/Back_hover.png"
         hover_sound "sfx/hover.mp3"
-        action Notify("Может, ты не будешь диктовать, куда мне идти?")
+        action Jump("street")
     zorder 15
 
 # Фоны
@@ -461,3 +528,19 @@ screen WWhite:
     fixed:
         xsize 1920 ysize 1080
         add "images/sprites/p1/podyezd/WWhite.png" align (.5,.5)
+
+screen BS:
+    modal True
+    zorder 0
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg between scenes.png" align (.5,.5)
+
+screen street:
+    modal True
+    zorder 1
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p1/bg street.png" align (.5,.5)

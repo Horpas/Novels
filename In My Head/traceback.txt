@@ -1,32 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/P1.rpy", line 270, in script
-    show screen heater
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-Exception: Screen heater is not known.
-
+After initialization, but before game start.
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "game/screens.rpy", line 142, in <module>
+    xpos gui.name_xpos
+AttributeError: 'StoreModule' object has no attribute 'name_xpos'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/P1.rpy", line 270, in script
-    show screen heater
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1974, in execute
-    self.call("execute")
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
-    renpy.show_screen(name, *args, **kwargs)
-  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\display\screen.py", line 1327, in show_screen
-    raise Exception("Screen %s is not known.\n" % (name[0],))
-Exception: Screen heater is not known.
-
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\main.py", line 75, in run
+    renpy.translation.init_translation()
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\translation\__init__.py", line 702, in init_translation
+    renpy.store._init_language() # type: ignore
+  File "renpy/common/00start.rpy", line 83, in _init_language
+    renpy.change_language(language)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\translation\__init__.py", line 796, in change_language
+    new_change_language(tl, language)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\translation\__init__.py", line 748, in new_change_language
+    i.apply()
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\ast.py", line 2800, in apply
+    value = renpy.python.py_eval(expr)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Program Files (x86)\renpy-8.1.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 142, in <module>
+    xpos gui.name_xpos
+AttributeError: 'StoreModule' object has no attribute 'name_xpos'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
-In My Head 1.0,patch_a.4
-Fri Sep 13 16:34:26 2024
+In My Head 1.0,patch_a.6
+Wed Sep 18 15:03:15 2024
