@@ -209,16 +209,17 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Кнопки выбора используются во внутриигровых меню.
 
-define gui.choice_button_width = 700
+define gui.choice_button_width = 750
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(100, 8, 100, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
-define gui.choice_button_text_xalign = 1
+define gui.choice_button_text_xalign = -0.1
 define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_hover_color = "#888888"
 define gui.choice_button_text_insensitive_color = '#8888887f'
+define gui.choice_button_hover_sound = "audio/sfx/hover.mp3"
 
 
 

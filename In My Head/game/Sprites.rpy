@@ -337,8 +337,7 @@ screen car:
         idle  "images/sprites/p1/street/volga.png"
         hover "images/sprites/p1/street/volga_hover.png"
         hover_sound "sfx/car.mp3"
-        activate_sound "sfx/car_no_keys.mp3"
-        action Notify("Без ключей я никуда не поеду.")
+        action Jump("drivee")
 
     zorder 2
 
@@ -354,6 +353,58 @@ screen win:
 
     zorder 2
 
+screen keys:
+    imagebutton:
+        xpos 962
+        ypos 940
+        idle "images/sprites/p1/Room1/keys.png"
+        hover "images/sprites/p1/Room1/keys_hover.png"
+        hover_sound "sfx/spoons.mp3"
+        activate_sound "sfx/click.mp3"
+        action Jump("KeI")
+    zorder 2
+
+screen beep:
+    imagebutton:
+        xpos 451
+        ypos 794
+        idle "images/sprites/p2/Drive/beep.png"
+        hover "images/sprites/p2/Drive/beep_sound.png"
+        activate_sound "sfx/beep.mp3"
+        action Notify("Весело, да?")
+    zorder 2
+
+screen radio:
+    imagebutton:
+        xpos 1109
+        ypos 942
+        idle "images/sprites/p2/Drive/radio.png"
+        hover "images/sprites/p2/Drive/radio_hover.png"
+        hover_sound "sfx/radio.mp3"
+        activate_sound "sfx/radio.mp3"
+        action Jump("radio")
+    zorder 2
+
+screen bardachok:
+    imagebutton:
+        xpos 1530
+        ypos 871
+        idle "images/sprites/p2/Drive/bardachok.png"
+        hover "images/sprites/p2/Drive/bardachok_hover.png"
+        hover_sound "sfx/radio.mp3"
+        activate_sound "sfx/radio.mp3"
+        action Notify("Пусто.")
+    zorder 2
+
+screen sign:
+    imagebutton:
+        xpos 1565
+        ypos 351
+        idle "images/sprites/p2/Crossroad/RightSign.png"
+        hover "images/sprites/p2/Crossroad/RightSign_hover.png"
+        hover_sound "sfx/P.mp3"
+        action Notify("Нет смысла.")
+    zorder 2
 
 # Интерфейс
 
@@ -376,7 +427,7 @@ screen TExit:
         hover "images/sprites/Back_hover.png"
         hover_sound "sfx/hover.mp3"
         activate_sound "sfx/move.mp3"
-        action Jump("Exit")
+        action Jump("TExit")
     zorder 15
 
 screen Phone:
@@ -446,6 +497,26 @@ screen Tyard:
         action Jump("street")
     zorder 15
 
+screen TCity:
+    imagebutton:
+        ypos 703
+        xpos 464      
+        idle "images/sprites/Left.png"
+        hover "images/sprites/Left_hover.png"
+        hover_sound "sfx/hover.mp3"
+        action Jump("TCrossroad")
+    zorder 15
+
+screen BTHomeA:
+    imagebutton:
+        ypos 483
+        xpos 1861      
+        idle "images/sprites/Right.png"
+        hover "images/sprites/Right_hover.png"
+        hover_sound "sfx/hover.mp3"
+        action Notify("Я только отсюда выехал.")
+    zorder 15
+
 # Фоны
 
 screen room1st:
@@ -480,13 +551,21 @@ screen TFridge:
         xsize 1920 ysize 1080
         add "images/bg/p1/bg fridge.png" align (.5,.5)
 
-screen crash:
+screen Crash1:
     modal True
     zorder 1
     
     fixed:
         xsize 1920 ysize 1080
-        add "images/sprites/p1/Fridge/Crash.png" align (.5,.5)
+        add "images/sprites/p1/Fridge/crash1.png" align (.5,.5)
+
+screen Crash2:
+    modal True
+    zorder 1
+    
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/sprites/p1/Fridge/crash2.png" align (.5,.5)
 
 screen crash2:
     modal True
@@ -531,7 +610,7 @@ screen WWhite:
 
 screen BS:
     modal True
-    zorder 0
+    zorder 18
 
     fixed:
         xsize 1920 ysize 1080
@@ -544,3 +623,96 @@ screen street:
     fixed:
         xsize 1920 ysize 1080
         add "images/bg/p1/bg street.png" align (.5,.5)
+
+screen driving:
+    modal True
+    zorder 1
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p2/bg driving.png" align (.5,.5)
+
+screen crossroad:
+    modal True
+    zorder 1
+
+    fixed:
+        xsize 1920 ysize 1080
+        add "images/bg/p2/bg crossroad.png" align (.5,.5)
+
+init:
+    image rain:
+        "images/sprites/p1/rain/rain1.png"
+        0.03
+        "images/sprites/p1/rain/rain2.png"
+        0.03
+        "images/sprites/p1/rain/rain3.png"
+        0.03
+        "images/sprites/p1/rain/rain4.png"
+        0.03
+        "images/sprites/p1/rain/rain5.png"
+        0.03
+        "images/sprites/p1/rain/rain6.png"
+        0.03
+        "images/sprites/p1/rain/rain7.png"
+        0.03
+        "images/sprites/p1/rain/rain8.png"
+        0.03
+
+        repeat
+
+    image stLight:
+        "images/sprites/p2/Crossroad/R_light.png"
+        8
+        "images/sprites/p2/Crossroad/Y_light.png"
+        3
+        "images/sprites/p2/Crossroad/G_light.png"
+        10
+        "images/sprites/p2/Crossroad/light.png"
+        0.7
+        "images/sprites/p2/Crossroad/G_light.png"
+        0.7
+        "images/sprites/p2/Crossroad/light.png"
+        0.7
+        "images/sprites/p2/Crossroad/G_light.png"
+        0.7
+        "images/sprites/p2/Crossroad/light.png"
+        0.7
+        "images/sprites/p2/Crossroad/G_light.png"
+        0.7
+        "images/sprites/p2/Crossroad/light.png"
+        0.7
+        "images/sprites/p2/Crossroad/G_light.png"
+        0.7
+        "images/sprites/p2/Crossroad/light.png"
+        0.7
+        "images/sprites/p2/Crossroad/Y_light.png"
+        3
+        "images/sprites/p2/Crossroad/R_light.png"
+
+        repeat
+
+# Прикольчик со светофором
+
+screen Red:
+    imagebutton:
+        xpos 645
+        ypos 755
+        idle "images/sprites/p2/Crossroad/R_light.png"
+    zorder 2
+
+
+screen Yellow:
+    imagebutton:
+        xpos 645
+        ypos 755
+        idle "images/sprites/p2/Crossroad/Y_light.png"
+    zorder 2
+
+
+screen Green:
+    imagebutton:
+        xpos 645
+        ypos 755
+        idle "images/sprites/p2/Crossroad/Y_light.png"
+    zorder 2
