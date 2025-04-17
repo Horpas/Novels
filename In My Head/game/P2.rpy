@@ -47,6 +47,21 @@ hide screen BTHomeA
 show screen crossroad
 show screen sign
 show stLight
+show screen Red
 hide screen BS 
 with dissolve
 " "
+label r_strlight:
+hide screen Green
+screen strlightR():
+    timer 10.0 action Jump(y_strlight)
+
+label y_strlight:
+hide screen Red
+screen strlightR():
+timer 3.0 action Jump(g_strlight)
+
+lable g_strlight:
+hide screen Yellow
+screen strlightG():
+timer 15.0 action Jump(y_strlight)
